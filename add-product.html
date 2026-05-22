@@ -13,50 +13,85 @@
 <link rel="stylesheet"
       href="style.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+
 </head>
 
 <body>
 
 <div class="background"></div>
 
-<div class="login-container">
+<div class="dashboard-container">
 
-<div class="glass-card">
+    <!-- SIDEBAR -->
 
-<h2>Add Product</h2>
+    <aside class="sidebar glass">
 
-<div class="form-group">
+        <h2>ADMIN</h2>
 
-<input type="text"
-       id="productName"
-       placeholder="Product Name">
+        <ul>
 
-</div>
+            <li>
+              <a href="dashboard.html">
+                Dashboard
+              </a>
+            </li>
 
-<div class="form-group">
+            <li class="active">
+              <a href="add-product.html">
+                Add Product
+              </a>
+            </li>
 
-<input type="number"
-       id="productPrice"
-       placeholder="Price">
+        </ul>
 
-</div>
+    </aside>
 
-<div class="form-group">
+    <!-- MAIN -->
 
-<input type="text"
-       id="productCategory"
-       placeholder="Category">
+    <main class="main-content">
 
-</div>
+        <div class="glass-card">
 
-<button class="login-btn"
-        onclick="addProduct()">
+            <h1>Add Product</h1>
 
-Save Product
+            <br>
 
-</button>
+            <div class="form-group">
 
-</div>
+                <input type="text"
+                       id="productName"
+                       placeholder="Product Name">
+
+            </div>
+
+            <div class="form-group">
+
+                <input type="number"
+                       id="productPrice"
+                       placeholder="Price">
+
+            </div>
+
+            <div class="form-group">
+
+                <input type="text"
+                       id="productCategory"
+                       placeholder="Category">
+
+            </div>
+
+            <button class="login-btn"
+                    onclick="addProduct()">
+
+                Save Product
+
+            </button>
+
+        </div>
+
+    </main>
 
 </div>
 
