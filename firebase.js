@@ -1,11 +1,22 @@
-import { initializeApp } from
+import { initializeApp }
+from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
   getAuth,
   signInWithEmailAndPassword
-} from
+}
+from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
 
@@ -28,6 +39,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
+
+const db = getFirestore(app);
+
+/* LOGIN */
 
 window.login = function(){
 
@@ -53,5 +68,39 @@ window.login = function(){
       alert(error.message);
 
   });
+
+}
+
+/* ADD PRODUCT */
+
+window.addProduct = async function(){
+
+  const name =
+    document.getElementById("productName").value;
+
+  const price =
+    document.getElementById("productPrice").value;
+
+  const category =
+    document.getElementById("productCategory").value;
+
+  try{
+
+      await addDoc(
+        collection(db,"products"),
+        {
+          name:name,
+          price:price,
+          category:category
+        }
+      );
+
+      alert("Product Added");
+
+  }catch(error){
+
+      alert(error.message);
+
+  }
 
 }
