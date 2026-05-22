@@ -215,6 +215,18 @@ body{
 
 }
 
+.sidebar a{
+
+  text-decoration:none;
+
+  color:white;
+
+  display:block;
+
+  width:100%;
+
+}
+
 .logout-btn{
 
   padding:15px;
