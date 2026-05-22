@@ -1,32 +1,101 @@
+<!-- dashboard.html -->
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>Dashboard</title>
 
 <link rel="stylesheet"
       href="style.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+
 </head>
 
 <body>
 
-<div class="dashboard">
+<div class="dashboard-bg"></div>
 
-  <h1>Admin Dashboard</h1>
+<div class="dashboard-container">
 
-  <div class="card">
-      Welcome to the dashboard
-  </div>
+    <aside class="sidebar glass">
 
-  <button onclick="logout()">
-      Logout
-  </button>
+        <h2>ADMIN</h2>
+
+        <ul>
+
+            <li class="active">Dashboard</li>
+            <li>Users</li>
+            <li>Products</li>
+            <li>Orders</li>
+            <li>Analytics</li>
+            <li>Settings</li>
+
+        </ul>
+
+        <button class="logout-btn"
+                onclick="logout()">
+            Logout
+        </button>
+
+    </aside>
+
+    <main class="main-content">
+
+        <div class="topbar glass">
+
+            <h1>Dashboard</h1>
+
+            <input type="text"
+                   placeholder="Search...">
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card glass">
+                <h3>Total Users</h3>
+                <p>1,248</p>
+            </div>
+
+            <div class="card glass">
+                <h3>Total Orders</h3>
+                <p>2,753</p>
+            </div>
+
+            <div class="card glass">
+                <h3>Revenue</h3>
+                <p>$48,230</p>
+            </div>
+
+        </div>
+
+        <div class="chart glass">
+
+            <h2>Sales Overview</h2>
+
+            <div class="fake-chart"></div>
+
+        </div>
+
+    </main>
 
 </div>
 
 <script type="module">
+
+import {
+  initializeApp
+} from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
   getAuth,
@@ -34,44 +103,33 @@ import {
 } from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
-import {
-  initializeApp
-} from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-
 const firebaseConfig = {
 
-  apiKey: "AIzaSyBkz1iCqAugr8NoSbxrcrX5EWFoh4i36hk",
+  apiKey: "YOUR_API_KEY",
 
-  authDomain:
-  "stockhost-6daa0.firebaseapp.com",
+  authDomain: "YOUR_DOMAIN",
 
-  projectId:
-  "stockhost-6daa0",
+  projectId: "YOUR_PROJECT_ID",
 
-  storageBucket:
-  "stockhost-6daa0.firebasestorage.app",
+  storageBucket: "YOUR_BUCKET",
 
-  messagingSenderId:
-  "1097589064935",
+  messagingSenderId: "YOUR_SENDER_ID",
 
-  appId:
-  "1:1097589064935:web:85b39b3cd52be003d28e42"
+  appId: "YOUR_APP_ID"
 
 };
 
-const app =
-  initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-const auth =
-  getAuth(app);
+const auth = getAuth(app);
 
 window.logout = function(){
 
   signOut(auth)
   .then(() => {
 
-      window.location = "login.html";
+      window.location =
+        "login.html";
 
   });
 
