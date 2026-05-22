@@ -12,22 +12,19 @@ from
 
 const firebaseConfig = {
 
-  apiKey: "YOUR_API_KEY",
+  apiKey: "AIzaSyBkz1iCqAugr8NoSbxrcrX5EWFoh4i36hk",
 
   authDomain:
-  "YOUR_PROJECT.firebaseapp.com",
+  "stockhost-6daa0.firebaseapp.com",
 
-  projectId:
-  "YOUR_PROJECT_ID",
+  projectId: "stockhost-6daa0",
 
   storageBucket:
-  "YOUR_PROJECT.appspot.com",
+  "stockhost-6daa0.firebasestorage.app",
 
-  messagingSenderId:
-  "XXXX",
+  messagingSenderId: "1097589064935",
 
-  appId:
-  "XXXX"
+  appId: "1:1097589064935:web:85b39b3cd52be003d28e42"
 
 };
 
