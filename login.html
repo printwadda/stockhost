@@ -1,31 +1,62 @@
+<!-- login.html -->
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
   <title>Admin Login</title>
 
   <link rel="stylesheet"
         href="style.css">
 
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
 
-<div class="login-box">
+<div class="background"></div>
 
-  <h2>Admin Login</h2>
+<div class="login-container">
 
-  <input type="email"
-         id="email"
-         placeholder="Email">
+    <div class="glass-card">
 
-  <input type="password"
-         id="password"
-         placeholder="Password">
+        <div class="logo">
+            <div class="logo-box">⬢</div>
+            <h1>ADMIN PANEL</h1>
+            <p>Welcome Back</p>
+        </div>
 
-  <button onclick="login()">
-      Login
-  </button>
+        <div class="form-group">
+            <input type="email"
+                   id="email"
+                   placeholder="Email Address">
+        </div>
+
+        <div class="form-group">
+            <input type="password"
+                   id="password"
+                   placeholder="Password">
+        </div>
+
+        <button class="login-btn"
+                onclick="login()">
+            Login
+        </button>
+
+    </div>
 
 </div>
 
