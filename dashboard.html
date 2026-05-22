@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Dashboard</title>
+
+<link rel="stylesheet"
+      href="style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <h1>Admin Dashboard</h1>
+
+  <div class="card">
+      Welcome to the dashboard
+  </div>
+
+  <button onclick="logout()">
+      Logout
+  </button>
+
+</div>
+
+<script type="module">
+
+import {
+  getAuth,
+  signOut
+} from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+import {
+  initializeApp
+} from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+const firebaseConfig = {
+
+  apiKey: "AIzaSyBkz1iCqAugr8NoSbxrcrX5EWFoh4i36hk",
+
+  authDomain:
+  "stockhost-6daa0.firebaseapp.com",
+
+  projectId:
+  "stockhost-6daa0",
+
+  storageBucket:
+  "stockhost-6daa0.firebasestorage.app",
+
+  messagingSenderId:
+  "1097589064935",
+
+  appId:
+  "1:1097589064935:web:85b39b3cd52be003d28e42"
+
+};
+
+const app =
+  initializeApp(firebaseConfig);
+
+const auth =
+  getAuth(app);
+
+window.logout = function(){
+
+  signOut(auth)
+  .then(() => {
+
+      window.location = "login.html";
+
+  });
+
+}
+
+</script>
+
+</body>
+</html>
